@@ -12,13 +12,13 @@ import javafx.util.Duration;
 
 public class Car extends Pane  {
 public int speed=100;
-private double x =0;
-private double y=100;
-private double radius = 5;
-private Rectangle rectangle;
-private Polygon polygon;
-private Circle wheel1;
-private Circle wheel2;
+private double x =0; // x coordinate
+private double y=100; //y coordinate
+private double radius = 5; 
+private Rectangle rectangle; //car 
+private Polygon polygon; //car
+private Circle wheel1; //wheels
+private Circle wheel2; //wheels
 private Timeline animation;
 Car(){
 	createCar();
@@ -30,7 +30,7 @@ Car(){
 	
 }
 
-	protected void moveCar() {
+	protected void moveCar() { //  then move then make car
 		if(x<=getWidth()) {
 			x+=1;
 		}else {
@@ -38,12 +38,12 @@ Car(){
 		}
 		createCar();
 	}
-public void pause() {
+public void pause() { // pause 
 	animation.pause();
 }
 
 /** Play animation */
-public void play() {
+public void play() {  //move car
 	animation.play();
 }
 public void increaseSpeed() {
@@ -56,7 +56,7 @@ public void setSpeed(int n) {
 	speed=n;
 }
 
-	private void createCar() {
+	private void createCar() { //remove first ! and then draw shape
 	getChildren().clear();
 	rectangle = new Rectangle(x,y-20,50,10);
 	polygon = new Polygon(x+10, y-20,x+20,y-30,x+30,y-30,x+40,y-20);
